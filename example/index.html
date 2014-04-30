@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="example-app">
+  <head>
+    <meta charset="utf-8" />
+    <title>angular-complete example</title>
+    <script src="../bower_components/jquery/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../dist/angular.floater.js"></script>
+    <script src="app.js"></script>
+    <style>
+      body { margin: 0; padding: 0; }
+      .wrapper { width: 600px; margin: 0 auto; position: relative; }
+      .header, .footer { height: 150px; background: #ccc; }
+      .footer { height: 4000px; }
+      .floater { position: absolute; background: #f0f0f0; height: 300px; width: 100px; left: -120px; }
+      .content { height: 300px; }
+      .nav { list-style: none; padding: 10px 0; margin: 0; background: #ddd; }
+      .nav li { display: inline; }
+      .floater2 { float: left; background: #ddd; width: 150px; margin-right: 10px; box-sizing: border-box; padding: 10px; border: 1px solid #ccc;}
+    </style>
+  </head>
+  <body>
+    <div ng-controller="MainController">
+      <div class="wrapper">
+        <div floater="" class="floater">
+          I Float
+        </div>
+        <div class="header">header</div>
+        <ul floater="{stopElement: '.footer'}" class="nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="content">
+          <div floater="{ topPadding: '60px', stopElement: '.footer' }" class="floater2">
+            I'm some left nav that likes to be floated
+          </div>
+
+          <p>hey, I'm content</p> 
+        </div>
+        <div class="footer">footer</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "angular-floater",
+  "description": "Floating element directive",
+  "version": "0.0.1",
+  "homepage": "https://github.com/firstandthird/angular-floater",
+  "license": "MIT",
+  "copyright": "First+Third",
+  "main": "dist/angular.angular-floater.bower.js",
+  "dependencies": {
+    "angular": "~1.3.x",
+    "jquery": "*",
+    "floater": "~0.3.0"
+  },
+  "devDependencies": {
+    "assert": "*",
+    "blanket": "*"
+  },
+  "ignore": [
+    "test",
+    "example",
+    "lib",
+    "Gruntfile.js",
+    "package.json",
+    "grunt"
+  ]
+}
