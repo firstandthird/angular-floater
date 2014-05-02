@@ -1,11 +1,11 @@
 {
   "name": "angular-floater",
   "description": "Floating element directive",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/firstandthird/angular-floater",
   "license": "MIT",
   "copyright": "First+Third",
-  "main": "dist/angular.angular-floater.bower.js",
+  "main": "dist/angular.floater.bower.js",
   "dependencies": {
     "angular": ">1.2.0",
     "jquery": "*",

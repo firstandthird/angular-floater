@@ -1,6 +1,6 @@
 /*!
  * angular-floater - Floating element directive
- * v0.0.1
+ * v0.1.0
  * https://github.com/firstandthird/angular-floater
  * copyright First+Third 2014
  * MIT License
@@ -192,9 +192,9 @@ w.Fidel = Fidel;
 })(window, window.jQuery || window.Zepto);
 /*!
  * floater - a plugin to make element float on the screen
- * v0.3.0
- * https://github.com/jgallen23/floater
- * copyright JGA 2013
+ * v0.4.0
+ * https://github.com/firstandthird/floater
+ * copyright First+Third 2014
  * MIT License
 */
 (function($) {
@@ -383,7 +383,10 @@ w.Fidel = Fidel;
   angular.module('ftFloater', [])
     .directive('floater', ['$parse', function($parse) {
       return {
-
+        scope: {
+          floatStart: '&floatBegin',
+          floatStop: '&floatEnd'
+        },
         link: function(scope, el, attrs) {
           var options = $parse(attrs.floater)() || {};
 
@@ -391,7 +394,18 @@ w.Fidel = Fidel;
             options.stopElement = $(options.stopElement);
           }
 
-          $(el).floater(options);
+          $(el)
+            .floater(options)
+            .on('floatStart', function() {
+              scope.$apply(function() {
+                scope.floatStart();
+              });
+            })
+            .on('floatStop', function() {
+              scope.$apply(function() {
+                scope.floatStop();
+              });
+            });
         }
       };
     }]);
