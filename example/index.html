@@ -22,18 +22,18 @@
   <body>
     <div ng-controller="MainController">
       <div class="wrapper">
-        <div floater float-start="startedFloating()" float-stop="stoppedFloating()" class="floater">
+        <div floater float-begin="startedFloating()" float-end="stoppedFloating()" class="floater">
           I Float
         </div>
         <div class="header">header</div>
-        <ul floater="{stopElement: '.footer'}" class="nav">
+        <ul floater="{stopElement: '.footer'}" class="nav" float-begin="startedFloating()" float-end="stoppedFloating()">
           <li><a href="#">Home</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="content">
-          <div floater="{ topPadding: '60px', stopElement: '.footer' }" class="floater2">
+          <div floater="{ topPadding: '60px', stopElement: '.footer' }" class="floater2" float-begin="startedFloating()" float-end="stoppedFloating()">
             I'm some left nav that likes to be floated
           </div>
 
